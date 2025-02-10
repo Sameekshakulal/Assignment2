@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+public class PrefixSumCalculator {
+public static void main(String[] args) {
+int[] sales = {10, 20, 15, 30, 25};
+int[] prefixSum = new int[sales.length];
+
+prefixSum[0] = sales[0];
+for (int i = 1; i &lt; sales.length; i++) {
+prefixSum[i] = prefixSum[i - 1] + sales[i];
+}
+
+System.out.println(&quot;Prefix Sum Array: &quot; + Arrays.toString(prefixSum));
+}
+}
