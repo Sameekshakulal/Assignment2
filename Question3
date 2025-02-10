@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class PostfixSum {
+public static int[] computePostfixSum(int[] fuel) {
+int n = fuel.length;
+int[] postfixSum = new int[n];
+postfixSum[n - 1] = fuel[n - 1];
+
+for (int i = n - 2; i &gt;= 0; i--) {
+postfixSum[i] = fuel[i] + postfixSum[i + 1];
+}
+
+return postfixSum;
+}
+
+public static void main(String[] args) {
+int[] fuel = {5, 10, 3, 7, 8};
+int[] postfixSum = computePostfixSum(fuel);
+System.out.println(&quot;PostfixSum[] = &quot; + Arrays.toString(postfixSum));
+}
+}
